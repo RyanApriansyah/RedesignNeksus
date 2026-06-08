@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 30">
+  <g id="icn-semesta-support" transform="translate(-3102 -498)">
+    <rect id="Rectangle_6" data-name="Rectangle 6" width="20.455" height="20.455" rx="4" transform="translate(3106.773 502.773)" fill="#fff"/>
+    <path id="Path_80" data-name="Path 80" d="M5.911,0H18.184a4.091,4.091,0,0,1,4.091,4.091V16.364C22.275,18.623,3.652,0,5.911,0Z" transform="translate(3104.952 502.773)" fill="#fff"/>
+    <g id="Group_1289" data-name="Group 1289" transform="translate(3108.136 504.818)">
+      <g id="Group_1288" data-name="Group 1288" transform="translate(0 0)">
+        <path id="Path_3169" data-name="Path 3169" d="M18.841,11.172a7.98,7.98,0,1,0-15.955.053A1.744,1.744,0,0,0,2,12.75v1.773A1.778,1.778,0,0,0,3.773,16.3h.886V10.889a6.2,6.2,0,1,1,12.409,0v6.293H9.977v1.773h7.091a1.778,1.778,0,0,0,1.773-1.773V16.1a1.639,1.639,0,0,0,.886-1.454V12.608A1.632,1.632,0,0,0,18.841,11.172Z" transform="translate(-2 -3)" fill="#999999"/>
+        <circle id="Ellipse_295" data-name="Ellipse 295" cx="0.886" cy="0.886" r="0.886" transform="translate(5.318 7.977)" fill="#999999"/>
+        <circle id="Ellipse_296" data-name="Ellipse 296" cx="0.886" cy="0.886" r="0.886" transform="translate(10.636 7.977)" fill="#999999"/>
+        <path id="Path_3170" data-name="Path 3170" d="M16.637,10.458A5.353,5.353,0,0,0,6.018,11.717,7.157,7.157,0,0,0,10.326,6.5,7.124,7.124,0,0,0,16.637,10.458Z" transform="translate(-2.455 -3.341)" fill="#999999"/>
+      </g>
+    </g>
+  </g>
+</svg>

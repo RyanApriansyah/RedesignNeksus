@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BINUS - NEKSUS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<style>
+    .font-open {
+        font-family: "Open Sans", sans-serif;
+    }
+
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .sidebar-bg {
+        background: #0097da;
+    }
+
+    .nav-item {
+        transition: background 0.18s ease, padding-left 0.18s ease;
+    }
+
+    .nav-item:hover {
+        background: rgba(255, 255, 255, 0.13);
+        padding-left: 1.35rem;
+    }
+
+    .nav-item.active {
+        background: rgba(255, 255, 255, 0.18);
+        border-left: 3px solid #f5a623;
+    }
+
+    .sub-item {
+        transition: color 0.15s, background 0.15s;
+    }
+
+    .sub-item:hover {
+        background: rgba(255, 255, 255, 0.10);
+        color: #fff;
+    }
+
+    /* Subtle animated glow on role card */
+    @keyframes soft-glow {
+
+        0%,
+        100% {
+            box-shadow: 0 0 0 0 rgba(43, 188, 224, 0.0);
+        }
+
+        50% {
+            box-shadow: 0 0 18px 4px rgba(43, 188, 224, 0.22);
+        }
+    }
+
+    .role-card {
+        animation: soft-glow 4s ease-in-out infinite;
+    }
+
+    .dropdown-arrow {
+        transition: transform 0.25s ease;
+    }
+
+    .open>.dropdown-arrow {
+        transform: rotate(180deg);
+    }
+    .progress-wrap{
+    display:flex;
+    justify-content:center;
+    margin:25px 0;
+}
+
+.progress-circle{
+    width:130px;
+    height:130px;
+
+    border-radius:50%;
+
+    border:18px solid #d9d9d9;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+    font-weight:700;
+}
+
+.content-btn{
+    width:100%;
+    height:52px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#f4b53f;
+
+    color:white;
+    font-size:18px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+</style>
+
+<body class="bg-[#f2f2f2]">
+
+
+    <nav class="w-full fixed flex justify-between bg-white  px-5 pt-6 pb-4">
+        <div class="left flex items-center justify-cente gap-5  ">
+            <div class="flex gap-3 items-center">
+                <div class="menu"><img class="w-[20px] h-[20px]" src="Assets/Menu.svg" alt=""></div>
+                <div class="logo"><img class="w-[113px] h-[24px]" src="Assets/Logo.svg" alt=""></div>
+            </div>
+            <div class="gaps  text-[#cccccc] text-2xl">|</div>
+            <div class="">
+                <p class="text-xl text-[#212529] font-base">NEKSUS</p>
+            </div>
+        </div>
+        <div class="">
+            <div class="flex items-center gap-2">
+                <div class="notif"><img src="Assets/Notification.svg" alt=""></div>
+                <div class="cs"><img src="Assets/CS.svg" alt=""></div>
+                <div class="backpack mr-5"><img src="Assets/Backpack.svg" alt=""></div>
+                <div class="profile rounded-full">
+                    <img class=" w-[40px] h-[40px] flex object-cover object-center rounded-full"
+                        src="Assets/profile.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+
+
+    </nav>
+    <aside class="sidebar-bg w-64 h-screen fixed left-0 top-20 flex flex-col shadow-2xl">
+
+
+        <!-- Role Card -->
+        <div class="mx-4 mt-4 mb-2 rounded-xl p-[10px] role-card" style="background: #014769; ">
+            <div class="flex items-center justify-between mb-9">
+                <div class="flex items-center gap-2">
+                    <!-- User icon -->
+                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                        </svg>
+                    </div>
+                    <span class="text-white/90 text-sm font-medium">Role</span>
+                </div>
+                <button
+                    class="bg-binus-orange bg-[#f18700] transition-colors text-white text-[10px] font-bold px-2 py-[3px] rounded-md uppercase tracking-wide">
+                    Change
+                </button>
+            </div>
+            <p class="text-white font-bold text-base leading-tight">Student</p>
+            <p class="text-white/70 text-xs mt-0.5">Undergraduate</p>
+            <p class="text-white/70 text-xs">BINUS University</p>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 px-2 py-2 space-y-0.5 overflow-y-auto">
+
+            <!-- Home -->
+            <a href="#"
+                class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/90 hover:text-white cursor-pointer">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5v-6h4v6h5a1 1 0 001-1V10" />
+                </svg>
+                <span class="text-sm font-medium">Home</span>
+            </a>
+
+            <!-- Semester Plan -->
+            <div>
+                <button onclick="toggleMenu('semester-plan')" id="btn-semester-plan"
+                    class="nav-item w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/90 hover:text-white">
+                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                    <span class="text-sm font-medium flex-1 text-left">Semester Plan</span>
+                    <svg id="arrow-semester-plan" class="dropdown-arrow w-4 h-4 text-white/60" fill="none"
+                        stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="semester-plan" class="hidden pl-8 pr-2 pb-1 space-y-0.5">
+                    <a href="#"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">My Semester Plan</a>
+                    <a href="#"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">Streaming Registration</a>
+                    <a href="#"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">Enrichment Program</a>
+                </div>
+            </div>
+
+            <!-- Study Plan (active) -->
+            <a href="./StudyPlanMain.html"
+                class="nav-item  flex items-center gap-3 px-4 py-2.5 rounded-lg text-white cursor-pointer">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+                <span class="text-sm font-semibold">Study Plan</span>
+            </a>
+
+            <!-- Learning Resources -->
+            <div>
+                <button onclick="toggleMenu('learning-resources')" id="btn-learning-resources"
+                    class="nav-item w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/90 hover:text-white">
+                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    </svg>
+                    <span class="text-sm font-medium flex-1 text-left">Learning Resources</span>
+                    <svg id="arrow-learning-resources" class="dropdown-arrow w-4 h-4 text-white/60" fill="none"
+                        stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="learning-resources" class="hidden pl-8 pr-2 pb-1 space-y-0.5">
+                    <a href="./LearningResources.html"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer hover:text-white">My
+                        Learning Resources</a>
+                    <a href="./Resources.html"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer hover:text-white">Acquired
+                        Resources</a>
+                    <a href="./Backpack.html"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer hover:text-white">Backpack</a>
+                    <a href="./Backpack_Chekcout.html"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer hover:text-white">List
+                        of Transaction</a>
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- Footer -->
+        <div class="px-4 py-3 border-t border-white/10 text-white/40 text-xs text-center">
+            © 2026 BINUS University
+        </div>
+    </aside>
+    
+
+    <div class="ps-[270px] ps-10 pe-5 pt-24 font-open">
+        <a href="#"
+        onclick="history.back(); return false;"
+        class="back w-8 h-8 p-2 mt-5 flex items-center justify-center rounded-full bg-white">
+            <img src="Assets/ArrowGray.svg" alt="">
+        </a>
+        <div class="flex gap-5 mt-5 border-t-1 border-gray-300 pt-2">
+            <div class="detail w-[75%] h-fit bg-white">
+                <div class="banner w-full h-96 bg-white bg-no-repeat bg-cover bg-top overflow-x"
+                    style="background-image: url('Assets/CardImg.png');"></div>
+                <div class="body  flex flex-col gap-5 p-5">
+                    <div class="badge">
+                        <p class="text-xs font-semibold text-white bg-green-700 rounded-sm w-fit px-4 py-1 ">
+                            Bootcamp</p>
+                    </div>
+                    <div class="text flex flex-col gap-10">
+                        <div class="header">
+                            <p class="text-2xl font-bold">Strategi Kepemimpinan di Era Digital untuk Keberhasilan Bisnis
+                            </p>
+                            <div class="flex  gap-3 mt-3">
+                                <div class="date flex gap-2  items-center">
+                                    <img class="w-[15px] text-red-300" src="Assets/Datee.svg" alt="">
+                                    <p class="text-[12px] text-[#cccccc] flex mt-1">23 Mei 2026</p>
+                                </div>
+                                <div class="time flex gap-2  items-center">
+                                    <img class="w-[15px] text-red-300" src="Assets/Timee.svg" alt="">
+                                    <p class="text-[12px] text-[#cccccc] flex mt-[2px]">07.00 - 08.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explain flex flex-col gap-10">
+                            <div class="desc flex flex-col gap-5">
+                                <p class="text-xl font-semibold">Description</p>
+                                <p class="leading-7">Digital leadership adalah kemampuan untuk memanfaatkan teknologi
+                                    digital untuk membawa
+                                    perubahan positif dalam organisasi atau pengelolaan bisnis. Ini termasuk kemampuan
+                                    untuk
+                                    mengidentifikasi dan memanfaatkan teknologi digital yang tepat untuk meningkatkan
+                                    efisiensi,
+                                    meningkatkan strategi, mempromosikan inovasi, meningkatkan layanan pelanggan, dan
+                                    meningkatkan produktivitas. Digital leadership juga melibatkan membangun dan
+                                    mengawasi
+                                    infrastruktur yang dibutuhkan untuk mendukung penggunaan teknologi digital. Course
+                                    ini
+                                    memberikan informasi tentang cara mengembangkan strategi digital, mengelola proyek
+                                    digital,
+                                    menciptakan dan mengelola inovasi digital, serta memahami perangkat teknologi
+                                    digital
+                                    terbaru. Course ini juga akan mengajarkan bagaimana mengelola kultur digital dan
+                                    menggunakan
+                                    teknologi digital untuk meningkatkan efisiensi organisasi. <br><br>
+
+                                    Kursus ini akan membantu peserta untuk memahami strategi digital SMACIT dan
+                                    menggunakan
+                                    teknologi untuk membangun hubungan yang lebih efektif, memotivasi orang lain, dan
+                                    memimpin
+                                    di situasi tidak pasti. Kursus ini juga akan membahas tentang pengertian T-shaped
+                                    skills
+                                    &
+                                    T-shaped test dan bagaimana keterampilan ini bisa membantu Anda mencapai tujuan
+                                    Anda.
+                                    Selain
+                                    itu, peserta juga akan dibekali dengan keterampilan komunikasi dan kerjasama, serta
+                                    belajar
+                                    untuk beradaptasi dan melihat perubahan sebagai peluang untuk tumbuh dan berkembang.
+                                    Setelah
+                                    mengikuti kursus ini, peserta akan memiliki keterampilan teknologi untuk menjadi
+                                    pemimpin di
+                                    era digital. <br><br>
+
+                                    Materi yang akan dipelajari meliputi: 1. Tantangan di Industri 4.0 dari Sudut
+                                    Pandang
+                                    Pekerja 2. SMACIT 3. Tokoh Leaders di Era Digital 4. How the Context Effects the
+                                    Business 5.
+                                    T-shaped skills & T-shaped test 6. Better communication and collaboration skills 7.
+                                    Adaptability and acceptability to changes 8. Build hard technology skills</p>
+                            </div>
+
+                            <div class="materials flex flex-col gap-5">
+                                <p class="text-xl font-semibold">Materials</p>
+                                <p>
+                                <ul class="ms-10 flex flex-col gap-3">
+                                    <li class="list-disc">Tantangan di Industri 4.0 dari Sudut Pandang Pekerja</li>
+                                    <li class="list-disc">SMACIT</li>
+                                    <li class="list-disc">Tokoh Leaders di Era Digital</li>
+                                    <li class="list-disc">How the Context Effects the Business</li>
+                                    <li class="list-disc">T-shaped skills & T-shaped test</li>
+                                    <li class="list-disc">Better communication and collaboration skills</li>
+                                    <li class="list-disc">Adaptability and acceptability to changes</li>
+                                    <li class="list-disc">Build Hard Skills and Soft Skills</li>
+                                    <li class="list-disc">Post Test</li>
+                                    <li class="list-disc">Evaluasi</li>
+                                    <li class="list-disc">Sertifikat</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <div class="pay w-[25%] sticky top-24 h-fit bg-white p-5 rounded-lg">
+
+                <div class="info text-[#999] text-sm">
+                    <p>Duration: -</p>
+                    <p>Assignment: No</p>
+                </div>
+
+                <div class="mt-5">
+                    <p class="font-semibold text-lg">
+                        Progress
+                    </p>
+
+                    <div class="progress-wrap">
+
+                        <div class="progress-circle">
+                            <span>0%</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="content-btn" onclick="goToContent()">
+                    Go to Content
+                </button>
+        </div>
+    </div>
+
+    
+    <script>
+        function toggleMenu(id) {
+            const menu = document.getElementById(id);
+            const arrow = document.getElementById('arrow-' + id);
+            const btn = document.getElementById('btn-' + id);
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                if (arrow) arrow.classList.add('rotate-180');
+                if (btn) btn.classList.add('open');
+            } else {
+                menu.classList.add('hidden');
+                if (arrow) arrow.classList.remove('rotate-180');
+                if (btn) btn.classList.remove('open');
+            }
+        }
+
+        function goToContent() {
+            alert("Anda akan diarahkan ke halaman pembelajaran.");
+        }
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+
+                link.addEventListener('click', function(e) {
+
+                    e.preventDefault();
+
+                    const featureName = this.textContent.trim();
+
+                    alert(
+                        `Beralih ke "${featureName}" pages`
+                    );
+
+                });
+
+            });
+    </script>
+</body>
+
+</html>

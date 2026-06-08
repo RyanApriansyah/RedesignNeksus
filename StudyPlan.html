@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BINUS - NEKSUS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<style>
+    .font-open {
+        font-family: "Open Sans", sans-serif;
+    }
+
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .sidebar-bg {
+        background: #0097da;
+    }
+
+    .nav-item {
+        transition: background 0.18s ease, padding-left 0.18s ease;
+    }
+
+    .nav-item:hover {
+        background: rgba(255, 255, 255, 0.13);
+        padding-left: 1.35rem;
+    }
+
+    .nav-item.active {
+        background: rgba(255, 255, 255, 0.18);
+        border-left: 3px solid #f5a623;
+    }
+
+    .sub-item {
+        transition: color 0.15s, background 0.15s;
+    }
+
+    .sub-item:hover {
+        background: rgba(255, 255, 255, 0.10);
+        color: #fff;
+    }
+
+    /* Subtle animated glow on role card */
+    @keyframes soft-glow {
+
+        0%,
+        100% {
+            box-shadow: 0 0 0 0 rgba(43, 188, 224, 0.0);
+        }
+
+        50% {
+            box-shadow: 0 0 18px 4px rgba(43, 188, 224, 0.22);
+        }
+    }
+
+    .role-card {
+        animation: soft-glow 4s ease-in-out infinite;
+    }
+
+    .dropdown-arrow {
+        transition: transform 0.25s ease;
+    }
+
+    .open>.dropdown-arrow {
+        transform: rotate(180deg);
+    }
+</style>
+
+<body>
+
+
+    <nav class="w-full fixed flex justify-between bg-white  px-5 pt-6 pb-4">
+        <div class="left flex items-center justify-center gap-5  ">
+            <div class="flex gap-3 items-center">
+                <div class="menu"><img class="w-[20px] h-[20px]" src="Assets/Menu.svg" alt=""></div>
+                <div class="logo"><img class="w-[113px] h-[24px]" src="Assets/Logo.svg" alt=""></div>
+            </div>
+            <div class="gaps  text-[#cccccc] text-2xl">|</div>
+            <div class="">
+                <p class="text-xl text-[#212529] font-base">NEKSUS</p>
+            </div>
+        </div>
+        <div class="">
+            <div class="flex items-center gap-2">
+                <div class="notif"><img src="Assets/Notification.svg" alt=""></div>
+                <div class="cs"><img src="Assets/CS.svg" alt=""></div>
+                <div class="backpack mr-5"><img src="Assets/Backpack.svg" alt=""></div>
+                <div class="profile rounded-full">
+                    <img class=" w-[40px] h-[40px] flex object-cover object-center rounded-full"
+                        src="Assets/profile.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+
+
+    </nav>
+    <aside class="sidebar-bg w-64 h-screen fixed left-0 top-20 flex flex-col shadow-2xl">
+
+
+        <!-- Role Card -->
+        <div class="mx-4 mt-4 mb-2 rounded-xl p-[10px] role-card" style="background: #014769; ">
+            <div class="flex items-center justify-between mb-9">
+                <div class="flex items-center gap-2">
+                    <!-- User icon -->
+                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                        </svg>
+                    </div>
+                    <span class="text-white/90 text-sm font-medium">Role</span>
+                </div>
+                <button
+                    class="bg-binus-orange bg-[#f18700] transition-colors text-white text-[10px] font-bold px-2 py-[3px] rounded-md uppercase tracking-wide">
+                    Change
+                </button>
+            </div>
+            <p class="text-white font-bold text-base leading-tight">Student</p>
+            <p class="text-white/70 text-xs mt-0.5">Undergraduate</p>
+            <p class="text-white/70 text-xs">BINUS University</p>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 px-2 py-2 space-y-0.5 overflow-y-auto">
+
+            <!-- Home -->
+            <a href="#"
+                class="nav-item flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/90 hover:text-white cursor-pointer">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5v-6h4v6h5a1 1 0 001-1V10" />
+                </svg>
+                <span class="text-sm font-medium">Home</span>
+            </a>
+
+            <!-- Semester Plan -->
+            <div>
+                <button onclick="toggleMenu('semester-plan')" id="btn-semester-plan"
+                    class="nav-item w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/90 hover:text-white">
+                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                    <span class="text-sm font-medium flex-1 text-left">Semester Plan</span>
+                    <svg id="arrow-semester-plan" class="dropdown-arrow w-4 h-4 text-white/60" fill="none"
+                        stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="semester-plan" class="hidden pl-8 pr-2 pb-1 space-y-0.5">
+                    <a href="#"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">My
+                        Semester Plan</a>
+                    <a href="#"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">Streaming
+                        Registration</a>
+                    <a href="#"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">Enrichment
+                        Program</a>
+                </div>
+            </div>
+
+            <!-- Study Plan (active) -->
+            <a href="./StudyPlanMain.html"
+                class="nav-item  flex items-center gap-3 px-4 py-2.5 rounded-lg text-white cursor-pointer">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+                <span class="text-sm font-semibold">Study Plan</span>
+            </a>
+
+            <!-- Learning Resources -->
+            <div>
+                <button onclick="toggleMenu('learning-resources')" id="btn-learning-resources"
+                    class="nav-item w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-white/90 hover:text-white">
+                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    </svg>
+                    <span class="text-sm font-medium flex-1 text-left">Learning Resources</span>
+                    <svg id="arrow-learning-resources" class="dropdown-arrow w-4 h-4 text-white/60" fill="none"
+                        stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div id="learning-resources" class="hidden pl-8 pr-2 pb-1 space-y-0.5">
+                    <a href="./LearningResources.html"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer hover:text-white">My
+                        Learning Resources</a>
+                    <a href="./Resources.html"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer hover:text-white">Acquired
+                        Resources</a>
+                    <a href="./Backpack.html"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer hover:text-white">Backpack</a>
+                    <a href="./Backpack_Chekcout.html"
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer hover:text-white">List
+                        of Transaction</a>
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- Footer -->
+        <div class="px-4 py-3 border-t border-white/10 text-white/40 text-xs text-center">
+            © 2026 BINUS University
+        </div>
+    </aside>
+
+
+
+
+    <div class="ps-[270px] bg-[#f2f2f2] px-10 pt-28 font-open">
+        <div class="bread flex gap-1 text-[#0097da]">
+            <a class="text-sm text-[#0097da]" href="">Pilih Karir</a>
+            <img class="flex " src="Assets/Arrow.svg" alt="">
+            <a class="text-sm text-[#0097da]" href="">Pilih Pathway</a>
+        </div>
+        <div class="flex flex-col  mt-5">
+            <div class="text flex flex-col gap-1">
+                <p class="text-[#0097da] font-semibold">SELECTED CAREER</p>
+                <p class="text-2xl font-base">Back End Developer</p>
+                <p>Mengembangkan dan memelihara bagian "server-side" dari aplikasi web atau perangkat lunak; membuat dan
+                    mengelola basis data, API (Application Programming Interface), dan logika bisnis aplikasi;
+                    memastikan
+                    keamanan, kinerja, dan skalabilitas sistem.</p>
+            </div>
+            <hr class="text-gray-200 my-5">
+            <div class="flex flex-col gap-10">
+                <div class="AllPathways ">
+                    <div class="createPathway flex justify-between">
+                        <div class="">
+                            <p class="uppercase text-lg font-semibold">create your study pathway</p>
+                        </div>
+                        <div class="right flex gap-4 w-80 justify-end items-center">
+                            <p class="text-gray-600">1 Semester Faster</p>
+                            <img class="w-[14px] h-[14px]" src="Assets/Info.svg" alt="">
+                            <input type="checkbox">
+                        </div>
+
+                    </div>
+                    <div class="pathway mt-10 ">
+                        <div class="flex justify-center">
+                            <div class="col flex flex-col items-center gap-3">
+                                <div class="Sem text-sm font-bold">Semester 1, 2, 3</div>
+                                <div class="flex w-fit items-center mt-2">
+                                    <hr class="w-20 text-[#f2f2f2]">
+                                    <img src="Assets/TabNonactive.svg" alt="">
+                                    <hr class="w-20 text-gray-300">
+                                </div>
+                                <p class="flex text-center text-sm">Core Course <br>
+                                    University Course <br>
+                                    General Course</p>
+                            </div>
+                            <div class="col flex flex-col items-center gap-3">
+                                <div class="Sem text-sm font-bold">Semester 4</div>
+                                <div class="flex w-fit items-center mt-2">
+                                    <hr class="w-20 text-gray-300">
+                                    <button
+                                        class="tab-btn active border border-3 border-[#f18700] rounded-full cursor-pointer "
+                                        data-tab="sem4">
+                                        <img class="tab-btn active" src="Assets/TabActive.svg" alt="">
+                                    </button>
+                                    <hr class="w-20 text-gray-300">
+                                </div>
+                                <p class="flex text-center text-sm font-bold">Streaming Course</p>
+                            </div>
+                            <div class="col flex flex-col items-center gap-3">
+                                <div class="Sem text-sm font-bold">Semester 5</div>
+                                <div class="flex w-fit items-center mt-2">
+                                    <hr class="w-20 text-gray-300">
+                                    <button
+                                        class="tab-btn border border-3 rounded-full border-transparent cursor-pointer"
+                                        data-tab="sem5">
+                                        <img src="Assets/TabActive.svg" alt="">
+                                    </button>
+                                    <hr class="w-20 text-gray-300">
+                                </div>
+                                <p class="flex text-center text-sm ">Core Course <br>
+                                    University Course <br>
+                                <p class="font-bold text-sm text-center -mt-1">Streaming Course <br>
+                                    Elective Program</p>
+                                </p>
+                            </div>
+                            <div class="col flex flex-col items-center gap-3">
+                                <div class="Sem text-sm font-bold">Semester 6</div>
+                                <div class="flex w-fit items-center mt-2">
+                                    <hr class="w-20 text-gray-300">
+                                    <button
+                                        class="tab-btn border border-3 rounded-full border-transparent cursor-pointer"
+                                        data-tab="sem6">
+                                        <img src="Assets/TabActive.svg" alt="">
+                                    </button>
+                                    <hr class="w-20 text-gray-300">
+                                </div>
+                                <p class="flex text-center text-sm font-bold">
+                                    Enrichment</p>
+
+                            </div>
+                            <div class="col flex flex-col items-center gap-3">
+                                <div class="Sem text-sm font-bold">Semester 7</div>
+                                <div class="flex w-fit items-center mt-2">
+                                    <hr class="w-20 text-gray-300">
+                                    <button
+                                        class="tab-btn border border-3 rounded-full border-transparent cursor-pointer"
+                                        data-tab="sem7">
+                                        <img src="Assets/TabActive.svg" alt="">
+                                    </button>
+                                    <hr class="w-20 text-gray-300">
+                                </div>
+                                <p class="flex text-center text-sm font-bold">
+                                    Enrichment</p>
+                            </div>
+                            <div class="col flex flex-col items-center gap-3">
+                                <div class="Sem text-sm font-bold">Semester 8</div>
+                                <div class="flex w-fit items-center mt-2">
+                                    <hr class="w-20 text-gray-300">
+                                    <button
+                                        class="tab-btn border border-3 rounded-full border-transparent cursor-pointer"
+                                        data-tab="sem8">
+                                        <img src="Assets/TabActive.svg" alt="">
+                                    </button>
+                                    <hr class="w-20 text-[#f2f2f2]">
+                                </div>
+                                <p class="flex text-center text-sm">Thesis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Detail-Path flex flex-col gap-20">
+                    <div id="sem4" class="program tab-content h-fit w-full bg-white p-5 rounded-lg">
+                        <div class="flex justify-between">
+                            <div class="flex gap-5 items-center ">
+                                <div class="flex gap-5">
+                                    <div class="font-bold text-xl">
+                                        <p>Semester 4</p>
+                                    </div>
+                                    <div class="flex items-end gap-2"><span class="text-lg font-bold">12</span>
+                                        <p class="text-md">/ 21SCU</p>
+                                    </div>
+                                </div>
+                                <div class=""><img src="Assets/Link.svg" alt=""></div>
+                            </div>
+                            <div class="flex gap-2 items-center w-42">
+                                <p class="text-md">Selected Item</p>
+                                <p class="text-gray-400"><span class="font-bold text-xl text-black">1</span> / 1</p>
+                            </div>
+                        </div>
+                        <hr class="text-gray-100 my-5 border border-2">
+                        <div class="allcardo">
+                            <p class="uppercase text-xl font-semibold">Recomended</p>
+                            <div class="allcards flex flex-wrap gap-5 ">
+                                <div class="card border w-fit h-fit border-1 border-gray-200 rounded-lg">
+                                    <div
+                                        class="header p-5 py-7 flex flex-col justify-between h-[200px] rounded-tl-lg rounded-tr-lg w-[395px] text-white bg-[#88388f]">
+                                        <div class="flex flex-col gap-1 pt-2">
+                                            <p class="text-sm font-semibold">Streaming Course :</p>
+                                            <p class="text-md font-semibold">Database Technology</p>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <p class="text-xs">Total SCU : <span class="font-semibold">12</span></p>
+                                            <p class="text-xs">Location : <span class="font-semibold">Kemanggisan</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="body h-[355px] w-[395px] bg-white p-5 flex flex-col justify-between rounded-xl rounded-bl-xl">
+                                        <div class="flex flex-col gap-5">
+                                            <p class="text-sm line-clamp-3">Streaming Interactive multimedia is emphasis
+                                                in
+                                                exploring computer interactive multimedia applications, based on
+                                                computer
+                                                programming, design tools, and</p>
+                                            <div class="points text-sm flex flex-col gap-3">
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button flex w-full">
+                                            <button
+                                                class="select-btn w-full py-3 text-xs text-center rounded-md border-2 border-[#f18700] bg-[#fdf3e6] text-[#f18700] font-semibold cursor-pointer">
+                                                SELECT ITEM
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card border w-fit h-fit border-1 border-gray-200 rounded-lg">
+                                    <div
+                                        class="header p-5 py-7 flex flex-col justify-between h-[200px] rounded-tl-lg rounded-tr-lg w-[395px] text-white bg-[#88388f]">
+                                        <div class="flex flex-col gap-1 pt-2">
+                                            <p class="text-sm font-semibold">Streaming Course :</p>
+                                            <p class="text-md font-semibold">Database Technology</p>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <p class="text-xs">Total SCU : <span class="font-semibold">12</span></p>
+                                            <p class="text-xs">Location : <span class="font-semibold">Kemanggisan</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="body h-[355px] w-[395px] bg-white p-5 flex flex-col justify-between rounded-xl rounded-bl-xl">
+                                        <div class="flex flex-col gap-5">
+                                            <p class="text-sm line-clamp-3">Streaming Interactive multimedia is emphasis
+                                                in
+                                                exploring computer interactive multimedia applications, based on
+                                                computer
+                                                programming, design tools, and</p>
+                                            <div class="points text-sm flex flex-col gap-3">
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button flex w-full">
+                                            <button
+                                                class="select-btn w-full py-3 text-xs text-center rounded-md border-2 border-[#f18700] bg-[#fdf3e6] text-[#f18700] font-semibold cursor-pointer">
+                                                SELECT ITEM
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card border w-fit h-fit border-1 border-gray-200 rounded-lg">
+                                    <div
+                                        class="header p-5 py-7 flex flex-col justify-between h-[200px] rounded-tl-lg rounded-tr-lg w-[395px] text-white bg-[#88388f]">
+                                        <div class="flex flex-col gap-1 pt-2">
+                                            <p class="text-sm font-semibold">Streaming Course :</p>
+                                            <p class="text-md font-semibold">Database Technology</p>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <p class="text-xs">Total SCU : <span class="font-semibold">12</span></p>
+                                            <p class="text-xs">Location : <span class="font-semibold">Kemanggisan</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="body h-[355px] w-[395px] bg-white p-5 flex flex-col justify-between rounded-xl rounded-bl-xl">
+                                        <div class="flex flex-col gap-5">
+                                            <p class="text-sm line-clamp-3">Streaming Interactive multimedia is emphasis
+                                                in
+                                                exploring computer interactive multimedia applications, based on
+                                                computer
+                                                programming, design tools, and</p>
+                                            <div class="points text-sm flex flex-col gap-3">
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button flex w-full">
+                                            <button
+                                                class="select-btn w-full py-3 text-xs text-center rounded-md border-2 border-[#f18700] bg-[#fdf3e6] text-[#f18700] font-semibold cursor-pointer">
+                                                SELECT ITEM
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card border w-fit h-fit border-1 border-gray-200 rounded-lg">
+                                    <div
+                                        class="header p-5 py-7 flex flex-col justify-between h-[200px] rounded-tl-lg rounded-tr-lg w-[395px] text-white bg-[#88388f]">
+                                        <div class="flex flex-col gap-1 pt-2">
+                                            <p class="text-sm font-semibold">Streaming Course :</p>
+                                            <p class="text-md font-semibold">Database Technology</p>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <p class="text-xs">Total SCU : <span class="font-semibold">12</span></p>
+                                            <p class="text-xs">Location : <span class="font-semibold">Kemanggisan</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="body h-[355px] w-[395px] bg-white p-5 flex flex-col justify-between rounded-xl rounded-bl-xl">
+                                        <div class="flex flex-col gap-5">
+                                            <p class="text-sm line-clamp-3">Streaming Interactive multimedia is emphasis
+                                                in
+                                                exploring computer interactive multimedia applications, based on
+                                                computer
+                                                programming, design tools, and</p>
+                                            <div class="points text-sm flex flex-col gap-3">
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button flex w-full">
+                                            <button
+                                                class="select-btn w-full py-3 text-xs text-center rounded-md border-2 border-[#f18700] bg-[#fdf3e6] text-[#f18700] font-semibold cursor-pointer">
+                                                SELECT ITEM
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sem5" class="program tab-content hidden h-fit w-full bg-white p-5 rounded-lg">
+                        <div class="flex justify-between">
+                            <div class="flex gap-5 items-center ">
+                                <div class="flex gap-5">
+                                    <div class="font-bold text-xl">
+                                        <p>Semester 5</p>
+                                    </div>
+                                    <div class="flex items-end gap-2"><span class="text-lg font-bold">12</span>
+                                        <p class="text-md">/ 21SCU</p>
+                                    </div>
+                                </div>
+                                <div class=""><img src="Assets/Link.svg" alt=""></div>
+                            </div>
+                            <div class="flex gap-2 items-center w-42">
+                                <p class="text-md">Selected Item</p>
+                                <p class="text-gray-400"><span class="font-bold text-xl text-black">1</span> / 1</p>
+                            </div>
+                        </div>
+                        <hr class="text-gray-100 my-5 border border-2">
+                        <div class="allcardo">
+                            <p class="uppercase text-xl font-semibold">Recomended</p>
+                            <div class="allcards flex flex-wrap gap-5 ">
+
+                                <div class="card border w-fit h-fit border-1 border-gray-200 rounded-lg">
+                                    <div
+                                        class="header p-5 py-7 flex flex-col justify-between h-[200px] rounded-tl-lg rounded-tr-lg w-[395px] text-white bg-[#38388f]">
+                                        <div class="flex flex-col gap-1 pt-2">
+                                            <p class="text-sm font-semibold">Streaming Course :</p>
+                                            <p class="text-md font-semibold">Database Technology</p>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <p class="text-xs">Total SCU : <span class="font-semibold">12</span></p>
+                                            <p class="text-xs">Location : <span class="font-semibold">Kemanggisan</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="body h-[355px] w-[395px] bg-white p-5 flex flex-col justify-between rounded-xl rounded-bl-xl">
+                                        <div class="flex flex-col gap-5">
+                                            <p class="text-sm line-clamp-3">Streaming Interactive multimedia is emphasis
+                                                in
+                                                exploring computer interactive multimedia applications, based on
+                                                computer
+                                                programming, design tools, and</p>
+                                            <div class="points text-sm flex flex-col gap-3">
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button flex w-full">
+                                            <button
+                                                class="select-btn w-full py-3 text-xs text-center rounded-md border-2 border-[#f18700] bg-[#fdf3e6] text-[#f18700] font-semibold cursor-pointer">
+                                                SELECT ITEM
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sem6" class="program tab-content hidden h-fit w-full bg-white p-5 rounded-lg">
+                        <div class="flex justify-between">
+                            <div class="flex gap-5 items-center ">
+                                <div class="flex gap-5">
+                                    <div class="font-bold text-xl">
+                                        <p>Semester 6</p>
+                                    </div>
+                                    <div class="flex items-end gap-2"><span class="text-lg font-bold">12</span>
+                                        <p class="text-md">/ 21SCU</p>
+                                    </div>
+                                </div>
+                                <div class=""><img src="Assets/Link.svg" alt=""></div>
+                            </div>
+                            <div class="flex gap-2 items-center w-42">
+                                <p class="text-md">Selected Item</p>
+                                <p class="text-gray-400"><span class="font-bold text-xl text-black">1</span> / 1</p>
+                            </div>
+                        </div>
+                        <hr class="text-gray-100 my-5 border border-2">
+                        <div class="allcardo">
+                            <p class="uppercase text-xl font-semibold">Recomended</p>
+                            <div class="allcards flex flex-wrap gap-5 ">
+
+                                <div class="card border w-fit h-fit border-1 border-gray-200 rounded-lg">
+                                    <div
+                                        class="header p-5 py-7 flex flex-col justify-between h-[200px] rounded-tl-lg rounded-tr-lg w-[395px] text-white bg-[#36d88f]">
+                                        <div class="flex flex-col gap-1 pt-2">
+                                            <p class="text-sm font-semibold">Streaming Course :</p>
+                                            <p class="text-md font-semibold">Database Technology</p>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <p class="text-xs">Total SCU : <span class="font-semibold">12</span></p>
+                                            <p class="text-xs">Location : <span class="font-semibold">Kemanggisan</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="body h-[355px] w-[395px] bg-white p-5 flex flex-col justify-between rounded-xl rounded-bl-xl">
+                                        <div class="flex flex-col gap-5">
+                                            <p class="text-sm line-clamp-3">Streaming Interactive multimedia is emphasis
+                                                in
+                                                exploring computer interactive multimedia applications, based on
+                                                computer
+                                                programming, design tools, and</p>
+                                            <div class="points text-sm flex flex-col gap-3">
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button flex w-full">
+                                            <button
+                                                class="select-btn w-full py-3 text-xs text-center rounded-md border-2 border-[#f18700] bg-[#fdf3e6] text-[#f18700] font-semibold cursor-pointer">
+                                                SELECT ITEM
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sem7" class="program tab-content hidden h-fit w-full bg-white p-5 rounded-lg">
+                        <div class="flex justify-between">
+                            <div class="flex gap-5 items-center ">
+                                <div class="flex gap-5">
+                                    <div class="font-bold text-xl">
+                                        <p>Semester 7</p>
+                                    </div>
+                                    <div class="flex items-end gap-2"><span class="text-lg font-bold">12</span>
+                                        <p class="text-md">/ 21SCU</p>
+                                    </div>
+                                </div>
+                                <div class=""><img src="Assets/Link.svg" alt=""></div>
+                            </div>
+                            <div class="flex gap-2 items-center w-42">
+                                <p class="text-md">Selected Item</p>
+                                <p class="text-gray-400"><span class="font-bold text-xl text-black">1</span> / 1</p>
+                            </div>
+                        </div>
+                        <hr class="text-gray-100 my-5 border border-2">
+                        <div class="allcardo">
+                            <p class="uppercase text-xl font-semibold">Recomended</p>
+                            <div class="allcards flex flex-wrap gap-5 ">
+
+                                <div class="card border w-fit h-fit border-1 border-gray-200 rounded-lg">
+                                    <div
+                                        class="header p-5 py-7 flex flex-col justify-between h-[200px] rounded-tl-lg rounded-tr-lg w-[395px] text-white bg-[#FF653F]">
+                                        <div class="flex flex-col gap-1 pt-2">
+                                            <p class="text-sm font-semibold">Streaming Course :</p>
+                                            <p class="text-md font-semibold">Database Technology</p>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <p class="text-xs">Total SCU : <span class="font-semibold">12</span></p>
+                                            <p class="text-xs">Location : <span class="font-semibold">Kemanggisan</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="body h-[355px] w-[395px] bg-white p-5 flex flex-col justify-between rounded-xl rounded-bl-xl">
+                                        <div class="flex flex-col gap-5">
+                                            <p class="text-sm line-clamp-3">Streaming Interactive multimedia is emphasis
+                                                in
+                                                exploring computer interactive multimedia applications, based on
+                                                computer
+                                                programming, design tools, and</p>
+                                            <div class="points text-sm flex flex-col gap-3">
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button flex w-full">
+                                            <button
+                                                class="select-btn w-full py-3 text-xs text-center rounded-md border-2 border-[#f18700] bg-[#fdf3e6] text-[#f18700] font-semibold cursor-pointer">
+                                                SELECT ITEM
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sem8" class="program tab-content hidden h-fit w-full bg-white p-5 rounded-lg">
+                        <div class="flex justify-between">
+                            <div class="flex gap-5 items-center ">
+                                <div class="flex gap-5">
+                                    <div class="font-bold text-xl">
+                                        <p>Semester 8</p>
+                                    </div>
+                                    <div class="flex items-end gap-2"><span class="text-lg font-bold">12</span>
+                                        <p class="text-md">/ 21SCU</p>
+                                    </div>
+                                </div>
+                                <div class=""><img src="Assets/Link.svg" alt=""></div>
+                            </div>
+                            <div class="flex gap-2 items-center w-42">
+                                <p class="text-md">Selected Item</p>
+                                <p class="text-gray-400"><span class="font-bold text-xl text-black">1</span> / 1</p>
+                            </div>
+                        </div>
+                        <hr class="text-gray-100 my-5 border border-2">
+                        <div class="allcardo">
+                            <p class="uppercase text-xl font-semibold">Recomended</p>
+                            <div class="allcards flex flex-wrap gap-5 ">
+
+                                <div class="card border w-fit h-fit border-1 border-gray-200 rounded-lg">
+                                    <div
+                                        class="header p-5 py-7 flex flex-col justify-between h-[200px] rounded-tl-lg rounded-tr-lg w-[395px] text-white bg-[#7F2020]">
+                                        <div class="flex flex-col gap-1 pt-2">
+                                            <p class="text-sm font-semibold">Streaming Course :</p>
+                                            <p class="text-md font-semibold">Database Technology</p>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <p class="text-xs">Total SCU : <span class="font-semibold">12</span></p>
+                                            <p class="text-xs">Location : <span class="font-semibold">Kemanggisan</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="body h-[355px] w-[395px] bg-white p-5 flex flex-col justify-between rounded-xl rounded-bl-xl">
+                                        <div class="flex flex-col gap-5">
+                                            <p class="text-sm line-clamp-3">Streaming Interactive multimedia is emphasis
+                                                in
+                                                exploring computer interactive multimedia applications, based on
+                                                computer
+                                                programming, design tools, and</p>
+                                            <div class="points text-sm flex flex-col gap-3">
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                                <div
+                                                    class="point w-full h-fit border border-1 border-gray-200 flex rounded-[10px]">
+                                                    <div class="w-6 h-7 rounded-tl-[9px] rounded-bl-[9px] bg-[#0097da]">
+                                                    </div>
+                                                    <p class="py-1.5 ps-4 text-xs">Software Architecture</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button flex w-full">
+                                            <button
+                                                class="select-btn w-full py-3 text-xs text-center rounded-md border-2 border-[#f18700] bg-[#fdf3e6] text-[#f18700] font-semibold cursor-pointer">
+                                                SELECT ITEM
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Prev/Next Navigation -->
+        <div class="flex  items-center gap-1 justify-end mt-8 border-t-1 pb-10 border-gray-400 pt-10">
+            <button id="btn-prev" onclick="navigateTab(-1)"
+                class="flex items-center gap-2 px-5 py-2 rounded-md border-2 bg-[#acacac] font-semibold text-sm rounded-lg text-white uppercase hover:bg-[#acacac]  transition-colors cursor-pointer">
+                Return
+            </button>
+            <span id="tab-label" class="text-sm font-semibold text-gray-600"></span>
+            <button id="btn-next" onclick="navigateTab(1)"
+                class="flex items-center gap-2 px-5 py-2 rounded-md bg-[#f18700] text-white font-semibold text-sm rounded-lg uppercase  transition-colors cursor-pointer">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll(".tab-btn");
+        const contents = document.querySelectorAll(".tab-content");
+        const tabOrder = ["sem4", "sem5", "sem6", "sem7", "sem8"];
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                buttons.forEach(btn => {
+                    btn.classList.remove("border-[#f18700]");
+                    btn.classList.add("border-transparent");
+                });
+                button.classList.remove("border-transparent");
+                button.classList.add("border-[#f18700]");
+                contents.forEach(content => content.classList.add("hidden"));
+                document.getElementById(button.getAttribute("data-tab")).classList.remove("hidden");
+                updateNavButtons();
+            });
+        });
+
+        function getCurrentTabIndex() {
+            return tabOrder.findIndex(id => !document.getElementById(id).classList.contains("hidden"));
+        }
+
+        function navigateTab(direction) {
+            const next = getCurrentTabIndex() + direction;
+            if (next < 0 || next >= tabOrder.length) return;
+            document.querySelector(`.tab-btn[data-tab="${tabOrder[next]}"]`).click();
+        }
+
+        function updateNavButtons() {
+            const current = getCurrentTabIndex();
+            const prevBtn = document.getElementById("btn-prev");
+            const nextBtn = document.getElementById("btn-next");
+            prevBtn.classList.toggle("opacity-30", current === 0);
+            prevBtn.classList.toggle("pointer-events-none", current === 0);
+            nextBtn.classList.toggle("opacity-30", current === tabOrder.length - 1);
+            nextBtn.classList.toggle("pointer-events-none", current === tabOrder.length - 1);
+        }
+
+        document.querySelector(".tab-btn").click();
+
+        function toggleMenu(id) {
+            const menu = document.getElementById(id);
+            const arrow = document.getElementById('arrow-' + id);
+            const btn = document.getElementById('btn-' + id);
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                if (arrow) arrow.classList.add('rotate-180');
+                if (btn) btn.classList.add('open');
+            } else {
+                menu.classList.add('hidden');
+                if (arrow) arrow.classList.remove('rotate-180');
+                if (btn) btn.classList.remove('open');
+            }
+        }
+
+        document.querySelectorAll(".select-btn").forEach(button => {
+            button.addEventListener("click", () => {
+                if (button.textContent.trim() === "SELECT ITEM") {
+                    button.textContent = "SELECTED";
+                    button.classList.remove("bg-[#fdf3e6]", "text-[#f18700]");
+                    button.classList.add("bg-[#f18700]", "text-white");
+                } else {
+                    button.textContent = "SELECT ITEM";
+                    button.classList.remove("bg-[#f18700]", "text-white");
+                    button.classList.add("bg-[#fdf3e6]", "text-[#f18700]");
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                alert(`Beralih ke "${this.textContent.trim()}" pages`);
+            });
+        });
+
+
+        // const buttons = document.querySelectorAll(".tab-btn");
+        // const contents = document.querySelectorAll(".tab-content");
+
+        // buttons.forEach(button => {
+        //     button.addEventListener("click", () => {
+
+        //         // reset semua button
+        //         buttons.forEach(btn => {
+        //             btn.classList.remove(
+        //                 "border-[#f18700]"
+        //             );
+
+        //             btn.classList.add(
+        //                 "border-transparent"
+        //             );
+        //         });
+
+        //         // active button
+        //         button.classList.remove(
+        //             "border-transparent"
+        //         );
+
+        //         button.classList.add(
+        //             "border-[#f18700]"
+        //         );
+
+        //         // hide semua content
+        //         contents.forEach(content => {
+        //             content.classList.add("hidden");
+        //         });
+
+        //         // show selected content
+        //         const target = button.getAttribute("data-tab");
+
+        //         document
+        //             .getElementById(target)
+        //             .classList.remove("hidden");
+        //     });
+        // });
+
+        // set default active
+        document.querySelector(".tab-btn").click();
+
+        function toggleMenu(id) {
+            const menu = document.getElementById(id);
+            const arrow = document.getElementById('arrow-' + id);
+            const btn = document.getElementById('btn-' + id);
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                if (arrow) arrow.classList.add('rotate-180');
+                if (btn) btn.classList.add('open');
+            } else {
+                menu.classList.add('hidden');
+                if (arrow) arrow.classList.remove('rotate-180');
+                if (btn) btn.classList.remove('open');
+            }
+        }
+
+        // 放在函数外面
+        const selectButtons = document.querySelectorAll(".select-btn");
+
+        selectButtons.forEach(button => {
+            button.addEventListener("click", () => {
+
+                if (button.textContent.trim() === "SELECT ITEM") {
+                    button.textContent = "SELECTED";
+
+                    button.classList.remove(
+                        "bg-[#fdf3e6]",
+                        "text-[#f18700]"
+                    );
+
+                    button.classList.add(
+                        "bg-[#f18700]",
+                        "text-white"
+                    );
+                } else {
+                    button.textContent = "SELECT ITEM";
+
+                    button.classList.remove(
+                        "bg-[#f18700]",
+                        "text-white"
+                    );
+
+                    button.classList.add(
+                        "bg-[#fdf3e6]",
+                        "text-[#f18700]"
+                    );
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+
+            link.addEventListener('click', function (e) {
+
+                e.preventDefault();
+
+                const featureName = this.textContent.trim();
+
+                alert(
+                    `Beralih ke "${featureName}" pages`
+                );
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

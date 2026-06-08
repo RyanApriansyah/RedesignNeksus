@@ -1,0 +1,165 @@
+.main-content {
+    /* padding: 112px 200px 260px 270px; */
+    background: #f3f3f3;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+}
+
+
+.page-header{
+    border-bottom:1px solid #d9d9d9;
+    padding-bottom:20px;
+    margin-bottom:20px;
+}
+
+.back-btn{
+    width:40px;
+    height:40px;
+
+    border:none;
+    border-radius:50%;
+
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+    transition:.2s;
+}
+
+.back-btn:hover{
+    transform:translateX(-2px);
+}
+
+.page-header h1{
+    margin-top: 20px;
+    font-size:28px;
+    font-weight:500;
+}
+
+.backpack-layout{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+}
+
+.backpack-card{
+    flex:1;
+    background:white;
+    border-radius:12px;
+    padding:30px;
+}
+
+.resource-row{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.resource-check input{
+    width:22px;
+    height:22px;
+    cursor:pointer;
+}
+
+.resource-image img{
+    width:210px;
+    height:120px;
+    object-fit:cover;
+    border-radius:4px;
+}
+
+.resource-info{
+    flex:1;
+}
+
+.resource-info h2{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.resource-tag{
+    display:inline-block;
+    background:#d95d4a;
+    color:white;
+    padding:5px 14px;
+    border-radius:4px;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.resource-price{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.resource-remove{
+    align-self:flex-end;
+    margin-bottom:10px;
+}
+
+.resource-remove a{
+    color:#7db7ff;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.summary-card{
+    width:280px;
+    background:white;
+    border-radius:12px;
+    padding:20px;
+}
+
+.summary-card h2{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:16px;
+}
+
+.summary-date{
+    display:flex;
+    gap:12px;
+    color:#999;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.summary-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid #e5e5e5;
+    padding-top:18px;
+    margin-bottom:20px;
+}
+
+.summary-total span{
+    font-weight:700;
+}
+
+.summary-total strong{
+    font-size:18px;
+}
+
+.checkout-btn{
+    width:100%;
+    height:48px;
+    border:none;
+    border-radius:8px;
+    background:#e7b443;
+    color:white;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.checkout-btn:hover{
+    opacity:0.9;
+}
