@@ -103,7 +103,7 @@
 
 
     </nav>
- <aside class="sidebar-bg w-64 h-screen fixed left-0 top-20 flex flex-col shadow-2xl">
+    <aside class="sidebar-bg w-64 h-screen fixed left-0 top-20 flex flex-col shadow-2xl">
 
 
         <!-- Role Card -->
@@ -159,11 +159,14 @@
                 </button>
                 <div id="semester-plan" class="hidden pl-8 pr-2 pb-1 space-y-0.5">
                     <a href="#"
-                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">My Semester Plan</a>
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">My
+                        Semester Plan</a>
                     <a href="#"
-                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">Streaming Registration</a>
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">Streaming
+                        Registration</a>
                     <a href="#"
-                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">Enrichment Program</a>
+                        class="sub-item block px-3 py-2 rounded-lg text-white/70 text-xs font-medium cursor-pointer">Enrichment
+                        Program</a>
                 </div>
             </div>
 
@@ -214,7 +217,7 @@
             © 2026 BINUS University
         </div>
     </aside>
-    
+
 
     <div class="ps-[270px] ps-10 pe-5 pt-24 font-open">
         <a href="LearningResources.html" class="back w-8 h-8 p-2 mt-5 flex items-center justify-center
@@ -333,16 +336,36 @@
 
                     <p class="text-xl font-semibold flex justify-end">Rp 189.676</p>
                 </div>
-                <div class="butt flex w-full ">
-                    <a class="w-full text-center text-white rounded-md h-fit py-3 bg-[#f39b2a] font-semibold text-sm uppercase"
-                        href="Backpack.html">add to backpack</a>
+                <div class="butt flex w-full">
+                    <button id="backpack-btn" onclick="handleBackpackBtn()" class="w-full text-center text-white rounded-md h-fit py-3
+           bg-[#f39b2a] font-semibold text-sm cursor-pointer uppercase">
+                        add to backpack
+                    </button>
                 </div>
+
             </div>
         </div>
     </div>
 
 
     <script>
+        let isAdded = false;
+
+        function handleBackpackBtn() {
+            const btn = document.getElementById('backpack-btn');
+
+            if (!isAdded) {
+                // Pertama klik: ubah jadi "View Backpack"
+                isAdded = true;
+                btn.textContent = 'view backpack';
+                btn.classList.remove('bg-[#f39b2a]');
+                btn.classList.add('bg-[#f39b2a]');
+            } else {
+                // Kedua klik: langsung ke Backpack.html
+                window.location.href = 'Backpack.html';
+            }
+        }
+
         function toggleMenu(id) {
             const menu = document.getElementById(id);
             const arrow = document.getElementById('arrow-' + id);
